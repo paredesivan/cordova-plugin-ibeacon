@@ -40,7 +40,7 @@ function BeaconRegion (identifier, uuid, major, minor, notifyEntryStateOnDisplay
 	// that "this" is set correctly during the call
 	Region.call(this, identifier);
 
-	BeaconRegion.checkUuid(uuid);
+	//BeaconRegion.checkUuid(uuid);
 	BeaconRegion.checkMajorOrMinor(major);
 	BeaconRegion.checkMajorOrMinor(minor);
 
@@ -74,7 +74,7 @@ BeaconRegion.getUuidValidatorRegex = function () {
 
 BeaconRegion.checkUuid = function (uuid) {
 	if (!BeaconRegion.isValidUuid(uuid)) {
-		console.log(uuid + ' is not a valid UUID');
+		throw new TypeError(uuid + ' is not a valid UUID');
 	}
 };
 
