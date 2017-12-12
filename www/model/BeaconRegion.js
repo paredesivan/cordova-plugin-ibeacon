@@ -40,7 +40,7 @@ function BeaconRegion (identifier, uuid, major, minor, notifyEntryStateOnDisplay
 	// that "this" is set correctly during the call
 	Region.call(this, identifier);
 
-	BeaconRegion.checkUuid(uuid);
+	//BeaconRegion.checkUuid(uuid);
 	BeaconRegion.checkMajorOrMinor(major);
 	BeaconRegion.checkMajorOrMinor(minor);
 
