@@ -60,17 +60,18 @@ public class LocationManager extends CordovaPlugin implements BeaconConsumer {
 
 
 
-
+    //La duración predeterminada en milisegundos transcurridos sin escanear entre cada ciclo de escaneo de Bluetooth
     private static final int DEFAULT_FOREGROUND_BETWEEN_SCAN_PERIOD = 0;
 
     //original
-    //private static final int DEFAULT_SAMPLE_EXPIRATION_MILLISECOND = 20000;
+    //private static final int DEFAULT_SAMPLE_EXPIRATION_MILLISECOND = 5000;
 
-    private static final int DEFAULT_SAMPLE_EXPIRATION_MILLISECOND = 40000;
+    private static final int DEFAULT_SAMPLE_EXPIRATION_MILLISECOND = 5000;
 
     //cada cuando busca en la region
+    //The default duration in milliseconds of the Bluetooth scan cycle
     private static final int DEFAULT_FOREGROUND_SCAN_PERIOD = 1100;
-    private static int CDV_LOCATION_MANAGER_DOM_DELEGATE_TIMEOUT = 30;
+    private static int CDV_LOCATION_MANAGER_DOM_DELEGATE_TIMEOUT = 5;
 
 
 
@@ -82,6 +83,8 @@ public class LocationManager extends CordovaPlugin implements BeaconConsumer {
     public static final String TAG = "com.unarin.beacon";
     private static final int BUILD_VERSION_CODES_M = 23;
     private static final int PERMISSION_REQUEST_COARSE_LOCATION = 1;
+
+    //The default duration in milliseconds spent not scanning between each Bluetooth scan cycle
     private static final String FOREGROUND_BETWEEN_SCAN_PERIOD_NAME = "com.unarin.cordova.beacon.android.altbeacon.ForegroundBetweenScanPeriod";
     private static final String FOREGROUND_SCAN_PERIOD_NAME = "com.unarin.cordova.beacon.android.altbeacon.ForegroundScanPeriod";
 
