@@ -80,7 +80,7 @@ public class LocationManager extends CordovaPlugin implements BeaconConsumer {
     private static final String FOREGROUND_SCAN_PERIOD_NAME = "com.unarin.cordova.beacon.android.altbeacon.ForegroundScanPeriod";
     private static final int DEFAULT_FOREGROUND_BETWEEN_SCAN_PERIOD = 0;
     private static final String SAMPLE_EXPIRATION_MILLISECOND = "com.unarin.cordova.beacon.android.altbeacon.SampleExpirationMilliseconds";
-    private static final int DEFAULT_SAMPLE_EXPIRATION_MILLISECOND = 20000;
+    private static final int DEFAULT_SAMPLE_EXPIRATION_MILLISECOND = 40000;
     private static final int DEFAULT_FOREGROUND_SCAN_PERIOD = 1100;
     private static int CDV_LOCATION_MANAGER_DOM_DELEGATE_TIMEOUT = 30;
     private static final int BUILD_VERSION_CODES_M = 23;
