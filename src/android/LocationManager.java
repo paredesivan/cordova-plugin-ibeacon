@@ -1,21 +1,4 @@
-/*
-       Licensed to the Apache Software Foundation (ASF) under one
-       or more contributor license agreements.  See the NOTICE file
-       distributed with this work for additional information
-       regarding copyright ownership.  The ASF licenses this file
-       to you under the Apache License, Version 2.0 (the
-       "License"); you may not use this file except in compliance
-       with the License.  You may obtain a copy of the License at
 
-         http://www.apache.org/licenses/LICENSE-2.0
-
-       Unless required by applicable law or agreed to in writing,
-       software distributed under the License is distributed on an
-       "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-       KIND, either express or implied.  See the License for the
-       specific language governing permissions and limitations
-       under the License.
-*/
 package com.unarin.cordova.beacon;
 
 import android.Manifest;
@@ -74,16 +57,34 @@ import java.util.concurrent.LinkedBlockingQueue;
 @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 public class LocationManager extends CordovaPlugin implements BeaconConsumer {
 
+
+
+
+
+    private static final int DEFAULT_FOREGROUND_BETWEEN_SCAN_PERIOD = 0;
+
+    //original
+    //private static final int DEFAULT_SAMPLE_EXPIRATION_MILLISECOND = 20000;
+
+    private static final int DEFAULT_SAMPLE_EXPIRATION_MILLISECOND = 40000;
+
+    //cada cuando busca en la region
+    private static final int DEFAULT_FOREGROUND_SCAN_PERIOD = 1100;
+    private static int CDV_LOCATION_MANAGER_DOM_DELEGATE_TIMEOUT = 30;
+
+
+
+
+
+
+
+    private static final String SAMPLE_EXPIRATION_MILLISECOND = "com.unarin.cordova.beacon.android.altbeacon.SampleExpirationMilliseconds";
     public static final String TAG = "com.unarin.beacon";
+    private static final int BUILD_VERSION_CODES_M = 23;
     private static final int PERMISSION_REQUEST_COARSE_LOCATION = 1;
     private static final String FOREGROUND_BETWEEN_SCAN_PERIOD_NAME = "com.unarin.cordova.beacon.android.altbeacon.ForegroundBetweenScanPeriod";
     private static final String FOREGROUND_SCAN_PERIOD_NAME = "com.unarin.cordova.beacon.android.altbeacon.ForegroundScanPeriod";
-    private static final int DEFAULT_FOREGROUND_BETWEEN_SCAN_PERIOD = 0;
-    private static final String SAMPLE_EXPIRATION_MILLISECOND = "com.unarin.cordova.beacon.android.altbeacon.SampleExpirationMilliseconds";
-    private static final int DEFAULT_SAMPLE_EXPIRATION_MILLISECOND = 40000;
-    private static final int DEFAULT_FOREGROUND_SCAN_PERIOD = 1100;
-    private static int CDV_LOCATION_MANAGER_DOM_DELEGATE_TIMEOUT = 30;
-    private static final int BUILD_VERSION_CODES_M = 23;
+
 
     private BeaconTransmitter beaconTransmitter;
     private BeaconManager iBeaconManager;
