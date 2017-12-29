@@ -15,7 +15,7 @@ class PausableThreadPoolExecutor extends ThreadPoolExecutor {
     //original
     //private static int KEEP_ALIVE_SECONDS = 30;
 
-    private static int KEEP_ALIVE_SECONDS = 1;
+    private static int KEEP_ALIVE_SECONDS = 30;
 
     private boolean paused;
     private ReentrantLock pauseLock = new ReentrantLock();
