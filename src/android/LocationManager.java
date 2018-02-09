@@ -66,8 +66,6 @@ public class LocationManager extends CordovaPlugin implements BeaconConsumer {
     //private static int CDV_LOCATION_MANAGER_DOM_DELEGATE_TIMEOUT = 30;
 
 
-
-
     //tiempo en milisegundos transcurridos sin escanear entre cada ciclo de escaneo de Bluetooth
     private static final int DEFAULT_FOREGROUND_BETWEEN_SCAN_PERIOD = 0;
 
@@ -76,11 +74,9 @@ public class LocationManager extends CordovaPlugin implements BeaconConsumer {
     //cada cuando busca en la region
     //duracion del ciclo de escaneo
     private static final int DEFAULT_FOREGROUND_SCAN_PERIOD = 1100;
-    private static int CDV_LOCATION_MANAGER_DOM_DELEGATE_TIMEOUT = 30;
 
 
-
-
+    private static int CDV_LOCATION_MANAGER_DOM_DELEGATE_TIMEOUT = 3;
 
 
 
@@ -1350,6 +1346,7 @@ public class LocationManager extends CordovaPlugin implements BeaconConsumer {
             dict.put("minor", region.getId3());
         }
 
+
         dict.put("typeName", "BeaconRegion");
 
         return dict;
@@ -1384,6 +1381,7 @@ public class LocationManager extends CordovaPlugin implements BeaconConsumer {
         dict.put("uuid", region.getId1());
         dict.put("major", region.getId2());
         dict.put("minor", region.getId3());
+        dict.put("mac",region.getBluetoothAddress());
 
         // proximity
         dict.put("proximity", nameOfProximity(region.getDistance()));
